@@ -263,14 +263,6 @@
             grounded: false
         };
         
-        // Animation states
-        let pipeAnimation = {
-            active: true,
-            height: 0,
-            maxHeight: 80,
-            speed: 2
-        };
-        
         // Game objects
         let platforms = [];
         let coins = [];
@@ -296,19 +288,6 @@
         
         // Setup level
         function setupLevel(level) {
-            // Reset player position
-            player.x = 100;
-            player.y = 300;
-            player.velX = 0;
-            player.velY = 0;
-            player.jumping = false;
-            player.grounded = false;
-            camera.x = 0;
-            
-            // Reset pipe animation
-            pipeAnimation.active = true;
-            pipeAnimation.height = 0;
-            
             // Clear objects
             platforms = [];
             coins = [];
@@ -521,6 +500,15 @@
                     break;
             }
             
+            // Spawn player on the first platform
+            player.x = platforms[0].x + 20;
+            player.y = platforms[0].y - player.height;
+            player.velX = 0;
+            player.velY = 0;
+            player.jumping = false;
+            player.grounded = true;
+            camera.x = 0;
+            
             // Update UI
             levelDisplay.textContent = level;
             levelCompleteText.textContent = `Level ${level} Complete!`;
@@ -545,17 +533,6 @@
             // Eye
             ctx.fillStyle = '#000';
             ctx.fillRect(player.x - camera.x + 28, player.y - 8, 3, 3);
-        }
-        
-        // Draw pipe animation at start
-        function drawPipe() {
-            if (pipeAnimation.active) {
-                ctx.fillStyle = '#8B4513';
-                // Pipe
-                ctx.fillRect(player.x - camera.x - 20, player.y, 20, pipeAnimation.height);
-                // Pipe cap
-                ctx.fillRect(player.x - camera.x - 25, player.y - 5, 30, 5);
-            }
         }
         
         // Draw platforms
@@ -674,54 +651,56 @@
         function checkPlatformCollision() {
             player.grounded = false;
             
+            // Check collision with all platforms
             for (let i = 0; i < platforms.length; i++) {
                 const p = platforms[i];
                 
-                // Check if player is above platform and falling
+                // Check vertical collision (top and bottom)
                 if (player.x + player.width > p.x &&
-                    player.x < p.x + p.width &&
-                    player.y + player.height <= p.y &&
-                    player.y + player.height + player.velY >= p.y) {
+                    player.x < p.x + p.width) {
                     
-                    player.y = p.y - player.height;
-                    player.velY = 0;
-                    player.jumping = false;
-                    player.grounded = true;
-                    return;
+                    // Falling and hitting platform from above
+                    if (player.velY > 0 && 
+                        player.y + player.height <= p.y &&
+                        player.y + player.height + player.velY > p.y) {
+                        player.y = p.y - player.height;
+                        player.velY = 0;
+                        player.jumping = false;
+                        player.grounded = true;
+                    }
+                    
+                    // Jumping and hitting platform from below
+                    else if (player.velY < 0 && 
+                             player.y >= p.y + p.height &&
+                             player.y + player.velY < p.y + p.height) {
+                        player.y = p.y + p.height;
+                        player.velY = 0;
+                    }
                 }
                 
-                // Check if player is below platform and jumping up
-                if (player.x + player.width > p.x &&
-                    player.x < p.x + p.width &&
-                    player.y >= p.y + p.height &&
-                    player.y + player.velY <= p.y + p.height) {
-                    
-                    player.y = p.y + p.height;
-                    player.velY = 0;
-                    return;
-                }
-                
-                // Check side collisions
+                // Check horizontal collision (left and right)
                 if (player.y + player.height > p.y &&
                     player.y < p.y + p.height) {
                     
-                    // Left side collision
-                    if (player.x + player.width <= p.x &&
-                        player.x + player.width + player.velX >= p.x) {
+                    // Moving right and hitting platform from left
+                    if (player.velX > 0 && 
+                        player.x + player.width <= p.x &&
+                        player.x + player.width + player.velX > p.x) {
                         player.x = p.x - player.width;
                         player.velX = 0;
                     }
                     
-                    // Right side collision
-                    if (player.x >= p.x + p.width &&
-                        player.x + player.velX <= p.x + p.width) {
+                    // Moving left and hitting platform from right
+                    else if (player.velX < 0 && 
+                             player.x >= p.x + p.width &&
+                             player.x + player.velX < p.x + p.width) {
                         player.x = p.x + p.width;
                         player.velX = 0;
                     }
                 }
             }
             
-            // Ground collision
+            // Ground collision (fallback)
             if (player.y + player.height > canvas.height) {
                 player.y = canvas.height - player.height;
                 player.velY = 0;
@@ -743,15 +722,6 @@
         // Update game state
         function update() {
             frameCount++;
-            
-            // Handle pipe animation at start
-            if (pipeAnimation.active) {
-                pipeAnimation.height += pipeAnimation.speed;
-                if (pipeAnimation.height >= pipeAnimation.maxHeight) {
-                    pipeAnimation.active = false;
-                }
-                return;
-            }
             
             // Apply gravity
             player.velY += gravity;
@@ -809,12 +779,12 @@
                 
                 if (checkCollision(player, enemy)) {
                     // Reset player position and lose a life
-                    player.x = 100;
-                    player.y = 300;
-                    pipeAnimation.active = true;
-                    pipeAnimation.height = 0;
+                    player.x = platforms[0].x + 20;
+                    player.y = platforms[0].y - player.height;
                     player.velX = 0;
                     player.velY = 0;
+                    player.jumping = false;
+                    player.grounded = true;
                     camera.x = 0;
                     lives--;
                     livesDisplay.textContent = lives;
@@ -851,7 +821,6 @@
             drawCoins();
             drawEnemies();
             drawGoal();
-            drawPipe();
             drawPlayer();
             drawParticles();
         }
