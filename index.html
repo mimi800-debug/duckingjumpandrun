@@ -21,18 +21,19 @@
             align-items: center;
             overflow: hidden;
             color: #fff;
-            padding: 10px;
+            padding: 0;
+            margin: 0;
         }
         
         #game-container {
             position: relative;
-            width: 800px;
-            height: 500px;
+            width: 100vw;
+            height: 100vh;
             max-width: 100%;
-            max-height: 90vh;
+            max-height: 100%;
             box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
             border: 4px solid #4cc9f0;
-            border-radius: 8px;
+            border-radius: 0;
             overflow: hidden;
         }
         
@@ -47,7 +48,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            padding: 10px;
+            padding: 15px;
             display: flex;
             justify-content: space-between;
             pointer-events: none;
@@ -56,10 +57,10 @@
         
         .ui-panel {
             background: rgba(15, 52, 96, 0.7);
-            padding: 8px 12px;
+            padding: 10px 15px;
             border-radius: 8px;
             border: 2px solid #4cc9f0;
-            font-size: 0.8rem;
+            font-size: 1rem;
         }
         
         #start-screen, #level-complete, #game-over {
@@ -86,8 +87,8 @@
         }
         
         h1 {
-            font-size: 2rem;
-            margin-bottom: 15px;
+            font-size: 3rem;
+            margin-bottom: 20px;
             text-align: center;
             color: #f72585;
             text-shadow: 0 0 10px rgba(247, 37, 133, 0.7);
@@ -95,8 +96,8 @@
         }
         
         h2 {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
             color: #4cc9f0;
             max-width: 90%;
         }
@@ -105,15 +106,15 @@
             background: #f72585;
             color: white;
             border: none;
-            padding: 12px 25px;
-            font-size: 1rem;
-            margin: 10px;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            margin: 15px;
             cursor: pointer;
             border-radius: 8px;
             transition: all 0.3s;
             border: 2px solid #4cc9f0;
             box-shadow: 0 0 10px rgba(76, 201, 240, 0.5);
-            min-width: 200px;
+            min-width: 250px;
         }
         
         .btn:hover {
@@ -125,14 +126,14 @@
         .skin-selector {
             display: flex;
             justify-content: center;
-            margin: 15px 0;
+            margin: 20px 0;
             flex-wrap: wrap;
         }
         
         .skin-option {
-            width: 70px;
-            height: 70px;
-            margin: 0 10px;
+            width: 80px;
+            height: 80px;
+            margin: 0 15px;
             border: 3px solid #4cc9f0;
             border-radius: 8px;
             cursor: pointer;
@@ -141,7 +142,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 1.8rem;
+            font-size: 2rem;
         }
         
         .skin-option.selected {
@@ -153,10 +154,10 @@
         .instructions {
             max-width: 90%;
             text-align: center;
-            margin: 15px 0;
-            line-height: 1.5;
+            margin: 20px 0;
+            line-height: 1.6;
             color: #4cc9f0;
-            font-size: 0.8rem;
+            font-size: 1rem;
         }
         
         .level-indicator {
@@ -164,7 +165,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 4rem;
+            font-size: 5rem;
             color: white;
             text-shadow: 0 0 20px rgba(76, 201, 240, 0.8);
             opacity: 0;
@@ -175,69 +176,56 @@
         /* Mobile controls */
         #mobile-controls {
             position: absolute;
-            bottom: 20px;
+            bottom: 30px;
             width: 100%;
-            display: none;
+            display: flex;
             justify-content: space-between;
-            padding: 0 20px;
+            padding: 0 30px;
             pointer-events: none;
             z-index: 5;
         }
         
-        .control-btn {
-            width: 70px;
-            height: 70px;
-            background: rgba(247, 37, 133, 0.7);
-            border: 2px solid #4cc9f0;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.5rem;
+        .control-hint {
+            background: rgba(247, 37, 133, 0.3);
+            border: 1px solid #4cc9f0;
+            border-radius: 20px;
+            padding: 8px 15px;
+            font-size: 0.8rem;
             color: white;
-            pointer-events: auto;
-            user-select: none;
-        }
-        
-        #jump-btn {
-            width: 80px;
-            height: 80px;
-            font-size: 1.2rem;
+            opacity: 0.7;
         }
         
         /* Animation for buttons */
-        .btn:active, .control-btn:active {
+        .btn:active {
             transform: scale(0.95);
             background: #4cc9f0;
         }
         
         @media (max-width: 850px) {
-            #game-container {
-                width: 95vw;
-                height: 70vh;
-            }
-            
             h1 {
-                font-size: 1.5rem;
+                font-size: 2rem;
             }
             
             h2 {
-                font-size: 0.9rem;
+                font-size: 1rem;
             }
             
             .btn {
-                padding: 10px 20px;
-                font-size: 0.8rem;
-                min-width: 150px;
+                padding: 12px 25px;
+                font-size: 1rem;
+                min-width: 200px;
             }
             
             .ui-panel {
-                font-size: 0.6rem;
-                padding: 5px 8px;
+                font-size: 0.7rem;
+                padding: 8px 12px;
             }
             
-            #mobile-controls {
-                display: flex;
+            .skin-option {
+                width: 70px;
+                height: 70px;
+                margin: 0 10px;
+                font-size: 1.8rem;
             }
         }
         
@@ -250,10 +238,14 @@
             }
             
             h1 {
-                font-size: 1.2rem;
+                font-size: 1.5rem;
             }
             
             h2 {
+                font-size: 0.8rem;
+            }
+            
+            .instructions {
                 font-size: 0.7rem;
             }
         }
@@ -262,7 +254,7 @@
 </head>
 <body>
     <div id="game-container">
-        <canvas id="game-canvas" width="800" height="500"></canvas>
+        <canvas id="game-canvas"></canvas>
         
         <div id="ui-overlay">
             <div class="ui-panel">
@@ -282,7 +274,9 @@
             <h2>Jump, Run, and Quack Your Way to Victory!</h2>
             
             <div class="instructions">
-                Use ARROW KEYS to move and SPACE to jump<br>
+                Tap LEFT side of screen to JUMP<br>
+                Tap RIGHT side of screen to MOVE RIGHT<br>
+                Tap LEFT side while moving to MOVE LEFT<br>
                 Collect coins and avoid enemies<br>
                 Complete all levels to win!
             </div>
@@ -312,13 +306,10 @@
             <button class="btn" id="restart-btn">PLAY AGAIN</button>
         </div>
         
-        <!-- Mobile Controls -->
+        <!-- Mobile Controls Hints -->
         <div id="mobile-controls">
-            <div>
-                <div class="control-btn" id="left-btn">←</div>
-                <div class="control-btn" id="right-btn">→</div>
-            </div>
-            <div class="control-btn" id="jump-btn">JUMP</div>
+            <div class="control-hint">TAP LEFT TO JUMP</div>
+            <div class="control-hint">TAP RIGHT TO MOVE</div>
         </div>
     </div>
 
@@ -341,10 +332,17 @@
         const levelCompleteText = document.getElementById('level-complete-text');
         const gameOverText = document.getElementById('game-over-text');
         const finalScoreDisplay = document.getElementById('final-score');
-        const leftBtn = document.getElementById('left-btn');
-        const rightBtn = document.getElementById('right-btn');
-        const jumpBtn = document.getElementById('jump-btn');
         const mobileControls = document.getElementById('mobile-controls');
+        
+        // Set canvas size to match container
+        function resizeCanvas() {
+            canvas.width = canvas.clientWidth;
+            canvas.height = canvas.clientHeight;
+        }
+        
+        // Initial resize
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
         
         // Game state
         let gameRunning = false;
@@ -354,10 +352,11 @@
         let selectedSkin = 1;
         let frameCount = 0;
         let gameStarted = false;
+        let camera = { x: 0 };
         
         // Player object with improved properties
         let player = {
-            x: 50,
+            x: 100,
             y: 300,
             width: 40,
             height: 40,
@@ -392,29 +391,44 @@
         const friction = 0.8;
         const jumpStrength = -12;
         
-        // Key states
-        const keys = {};
+        // Touch controls
         let touchLeft = false;
         let touchRight = false;
-        let touchJump = false;
+        let lastTouchX = 0;
         
         // Initialize game
         function initGame() {
+            // Enter fullscreen
+            enterFullscreen();
+            
             setupLevel(currentLevel);
             gameRunning = true;
             gameStarted = true;
             gameLoop();
         }
         
+        // Enter fullscreen mode
+        function enterFullscreen() {
+            const elem = document.documentElement;
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.webkitRequestFullscreen) { /* Safari */
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) { /* IE11 */
+                elem.msRequestFullscreen();
+            }
+        }
+        
         // Setup level
         function setupLevel(level) {
             // Reset player position for pipe animation
-            player.x = 50;
+            player.x = 100;
             player.y = 300;
             player.velX = 0;
             player.velY = 0;
             player.jumping = false;
             player.grounded = false;
+            camera.x = 0;
             
             // Reset pipe animation
             pipeAnimation.active = true;
@@ -428,9 +442,9 @@
             backgrounds = [];
             
             // Create background elements
-            for (let i = 0; i < 20; i++) {
+            for (let i = 0; i < 30; i++) {
                 backgrounds.push({
-                    x: Math.random() * canvas.width,
+                    x: Math.random() * 5000,
                     y: Math.random() * canvas.height,
                     size: Math.random() * 3 + 1,
                     speed: Math.random() * 0.5 + 0.1
@@ -441,33 +455,37 @@
             switch(level) {
                 case 1:
                     // Longer level with more platforms
-                    for (let i = 0; i < 20; i++) {
+                    for (let i = 0; i < 30; i++) {
                         platforms.push({
-                            x: i * 150,
+                            x: i * 200,
                             y: 450 - Math.sin(i * 0.5) * 50,
-                            width: 100,
+                            width: 150,
                             height: 20
                         });
                     }
                     
                     // Add some platforms in the air
-                    platforms.push({x: 300, y: 350, width: 80, height: 20});
-                    platforms.push({x: 500, y: 300, width: 80, height: 20});
-                    platforms.push({x: 700, y: 250, width: 80, height: 20});
-                    platforms.push({x: 900, y: 350, width: 80, height: 20});
-                    platforms.push({x: 1100, y: 300, width: 80, height: 20});
-                    platforms.push({x: 1300, y: 250, width: 80, height: 20});
-                    platforms.push({x: 1500, y: 350, width: 80, height: 20});
-                    platforms.push({x: 1700, y: 300, width: 80, height: 20});
-                    platforms.push({x: 1900, y: 250, width: 80, height: 20});
-                    platforms.push({x: 2100, y: 350, width: 80, height: 20});
-                    platforms.push({x: 2300, y: 300, width: 80, height: 20});
-                    platforms.push({x: 2500, y: 250, width: 80, height: 20});
+                    platforms.push({x: 400, y: 350, width: 100, height: 20});
+                    platforms.push({x: 700, y: 300, width: 100, height: 20});
+                    platforms.push({x: 1000, y: 250, width: 100, height: 20});
+                    platforms.push({x: 1300, y: 350, width: 100, height: 20});
+                    platforms.push({x: 1600, y: 300, width: 100, height: 20});
+                    platforms.push({x: 1900, y: 250, width: 100, height: 20});
+                    platforms.push({x: 2200, y: 350, width: 100, height: 20});
+                    platforms.push({x: 2500, y: 300, width: 100, height: 20});
+                    platforms.push({x: 2800, y: 250, width: 100, height: 20});
+                    platforms.push({x: 3100, y: 350, width: 100, height: 20});
+                    platforms.push({x: 3400, y: 300, width: 100, height: 20});
+                    platforms.push({x: 3700, y: 250, width: 100, height: 20});
+                    platforms.push({x: 4000, y: 350, width: 100, height: 20});
+                    platforms.push({x: 4300, y: 300, width: 100, height: 20});
+                    platforms.push({x: 4600, y: 250, width: 100, height: 20});
+                    platforms.push({x: 4900, y: 350, width: 100, height: 20});
                     
                     // Coins
-                    for (let i = 0; i < 30; i++) {
+                    for (let i = 0; i < 40; i++) {
                         coins.push({
-                            x: 100 + i * 100,
+                            x: 150 + i * 150,
                             y: 400 - Math.sin(i * 0.3) * 100,
                             width: 20,
                             height: 20,
@@ -476,54 +494,63 @@
                     }
                     
                     // Enemies
-                    enemies.push({x: 400, y: 430, width: 30, height: 20, speed: 2, direction: 1, minX: 350, maxX: 500});
-                    enemies.push({x: 800, y: 430, width: 30, height: 20, speed: 3, direction: -1, minX: 700, maxX: 900});
-                    enemies.push({x: 1200, y: 430, width: 30, height: 20, speed: 2, direction: 1, minX: 1100, maxX: 1300});
-                    enemies.push({x: 1600, y: 430, width: 30, height: 20, speed: 3, direction: -1, minX: 1500, maxX: 1700});
-                    enemies.push({x: 2000, y: 430, width: 30, height: 20, speed: 2, direction: 1, minX: 1900, maxX: 2100});
-                    enemies.push({x: 2400, y: 430, width: 30, height: 20, speed: 3, direction: -1, minX: 2300, maxX: 2500});
+                    enemies.push({x: 500, y: 430, width: 30, height: 20, speed: 2, direction: 1, minX: 450, maxX: 600});
+                    enemies.push({x: 1000, y: 430, width: 30, height: 20, speed: 3, direction: -1, minX: 900, maxX: 1100});
+                    enemies.push({x: 1500, y: 430, width: 30, height: 20, speed: 2, direction: 1, minX: 1400, maxX: 1600});
+                    enemies.push({x: 2000, y: 430, width: 30, height: 20, speed: 3, direction: -1, minX: 1900, maxX: 2100});
+                    enemies.push({x: 2500, y: 430, width: 30, height: 20, speed: 2, direction: 1, minX: 2400, maxX: 2600});
+                    enemies.push({x: 3000, y: 430, width: 30, height: 20, speed: 3, direction: -1, minX: 2900, maxX: 3100});
+                    enemies.push({x: 3500, y: 430, width: 30, height: 20, speed: 2, direction: 1, minX: 3400, maxX: 3600});
+                    enemies.push({x: 4000, y: 430, width: 30, height: 20, speed: 3, direction: -1, minX: 3900, maxX: 4100});
+                    enemies.push({x: 4500, y: 430, width: 30, height: 20, speed: 2, direction: 1, minX: 4400, maxX: 4600});
+                    enemies.push({x: 5000, y: 430, width: 30, height: 20, speed: 3, direction: -1, minX: 4900, maxX: 5100});
                     
                     // Goal
-                    goal = {x: 2700, y: 350, width: 30, height: 50};
+                    goal = {x: 5300, y: 350, width: 30, height: 50};
                     break;
                     
                 case 2:
                     // Even longer level with more complex layout
-                    for (let i = 0; i < 30; i++) {
+                    for (let i = 0; i < 40; i++) {
                         platforms.push({
-                            x: i * 120,
-                            y: 450 - Math.sin(i * 0.3) * 80,
-                            width: 80,
+                            x: i * 180,
+                            y: 450 - Math.sin(i * 0.4) * 80,
+                            width: 130,
                             height: 20
                         });
                     }
                     
                     // Add platforms at different heights
-                    for (let i = 0; i < 15; i++) {
+                    for (let i = 0; i < 20; i++) {
                         platforms.push({
-                            x: 200 + i * 200,
+                            x: 300 + i * 300,
                             y: 300 - Math.cos(i * 0.5) * 50,
-                            width: 70,
+                            width: 100,
                             height: 20
                         });
                     }
                     
                     // More platforms
-                    platforms.push({x: 300, y: 200, width: 60, height: 20});
-                    platforms.push({x: 600, y: 150, width: 60, height: 20});
-                    platforms.push({x: 900, y: 200, width: 60, height: 20});
-                    platforms.push({x: 1200, y: 150, width: 60, height: 20});
-                    platforms.push({x: 1500, y: 200, width: 60, height: 20});
-                    platforms.push({x: 1800, y: 150, width: 60, height: 20});
-                    platforms.push({x: 2100, y: 200, width: 60, height: 20});
-                    platforms.push({x: 2400, y: 150, width: 60, height: 20});
-                    platforms.push({x: 2700, y: 200, width: 60, height: 20});
-                    platforms.push({x: 3000, y: 150, width: 60, height: 20});
+                    platforms.push({x: 400, y: 200, width: 80, height: 20});
+                    platforms.push({x: 800, y: 150, width: 80, height: 20});
+                    platforms.push({x: 1200, y: 200, width: 80, height: 20});
+                    platforms.push({x: 1600, y: 150, width: 80, height: 20});
+                    platforms.push({x: 2000, y: 200, width: 80, height: 20});
+                    platforms.push({x: 2400, y: 150, width: 80, height: 20});
+                    platforms.push({x: 2800, y: 200, width: 80, height: 20});
+                    platforms.push({x: 3200, y: 150, width: 80, height: 20});
+                    platforms.push({x: 3600, y: 200, width: 80, height: 20});
+                    platforms.push({x: 4000, y: 150, width: 80, height: 20});
+                    platforms.push({x: 4400, y: 200, width: 80, height: 20});
+                    platforms.push({x: 4800, y: 150, width: 80, height: 20});
+                    platforms.push({x: 5200, y: 200, width: 80, height: 20});
+                    platforms.push({x: 5600, y: 150, width: 80, height: 20});
+                    platforms.push({x: 6000, y: 200, width: 80, height: 20});
                     
                     // Coins
-                    for (let i = 0; i < 40; i++) {
+                    for (let i = 0; i < 50; i++) {
                         coins.push({
-                            x: 50 + i * 90,
+                            x: 100 + i * 130,
                             y: 400 - Math.sin(i * 0.4) * 120,
                             width: 20,
                             height: 20,
@@ -532,70 +559,75 @@
                     }
                     
                     // Enemies
-                    for (let i = 0; i < 10; i++) {
+                    for (let i = 0; i < 15; i++) {
                         enemies.push({
-                            x: 300 + i * 300,
+                            x: 400 + i * 400,
                             y: 430,
                             width: 30,
                             height: 20,
                             speed: 2 + (i % 2),
                             direction: (i % 2 === 0) ? 1 : -1,
-                            minX: 250 + i * 300,
-                            maxX: 350 + i * 300
+                            minX: 350 + i * 400,
+                            maxX: 450 + i * 400
                         });
                     }
                     
                     // More enemies at different heights
-                    enemies.push({x: 400, y: 280, width: 30, height: 20, speed: 2, direction: 1, minX: 350, maxX: 500});
-                    enemies.push({x: 700, y: 130, width: 30, height: 20, speed: 3, direction: -1, minX: 650, maxX: 750});
-                    enemies.push({x: 1000, y: 280, width: 30, height: 20, speed: 2, direction: 1, minX: 950, maxX: 1100});
-                    enemies.push({x: 1300, y: 130, width: 30, height: 20, speed: 3, direction: -1, minX: 1250, maxX: 1350});
-                    enemies.push({x: 1600, y: 280, width: 30, height: 20, speed: 2, direction: 1, minX: 1550, maxX: 1700});
-                    enemies.push({x: 1900, y: 130, width: 30, height: 20, speed: 3, direction: -1, minX: 1850, maxX: 1950});
-                    enemies.push({x: 2200, y: 280, width: 30, height: 20, speed: 2, direction: 1, minX: 2150, maxX: 2300});
+                    enemies.push({x: 500, y: 280, width: 30, height: 20, speed: 2, direction: 1, minX: 450, maxX: 600});
+                    enemies.push({x: 900, y: 130, width: 30, height: 20, speed: 3, direction: -1, minX: 850, maxX: 950});
+                    enemies.push({x: 1300, y: 280, width: 30, height: 20, speed: 2, direction: 1, minX: 1250, maxX: 1400});
+                    enemies.push({x: 1700, y: 130, width: 30, height: 20, speed: 3, direction: -1, minX: 1650, maxX: 1750});
+                    enemies.push({x: 2100, y: 280, width: 30, height: 20, speed: 2, direction: 1, minX: 2050, maxX: 2200});
                     enemies.push({x: 2500, y: 130, width: 30, height: 20, speed: 3, direction: -1, minX: 2450, maxX: 2550});
-                    enemies.push({x: 2800, y: 280, width: 30, height: 20, speed: 2, direction: 1, minX: 2750, maxX: 2900});
-                    enemies.push({x: 3100, y: 130, width: 30, height: 20, speed: 3, direction: -1, minX: 3050, maxX: 3150});
+                    enemies.push({x: 2900, y: 280, width: 30, height: 20, speed: 2, direction: 1, minX: 2850, maxX: 3000});
+                    enemies.push({x: 3300, y: 130, width: 30, height: 20, speed: 3, direction: -1, minX: 3250, maxX: 3350});
+                    enemies.push({x: 3700, y: 280, width: 30, height: 20, speed: 2, direction: 1, minX: 3650, maxX: 3800});
+                    enemies.push({x: 4100, y: 130, width: 30, height: 20, speed: 3, direction: -1, minX: 4050, maxX: 4150});
+                    enemies.push({x: 4500, y: 280, width: 30, height: 20, speed: 2, direction: 1, minX: 4450, maxX: 4600});
+                    enemies.push({x: 4900, y: 130, width: 30, height: 20, speed: 3, direction: -1, minX: 4850, maxX: 4950});
+                    enemies.push({x: 5300, y: 280, width: 30, height: 20, speed: 2, direction: 1, minX: 5250, maxX: 5400});
+                    enemies.push({x: 5700, y: 130, width: 30, height: 20, speed: 3, direction: -1, minX: 5650, maxX: 5750});
+                    enemies.push({x: 6100, y: 280, width: 30, height: 20, speed: 2, direction: 1, minX: 6050, maxX: 6200});
                     
                     // Goal
-                    goal = {x: 3400, y: 350, width: 30, height: 50};
+                    goal = {x: 6500, y: 350, width: 30, height: 50};
                     break;
                     
                 case 3:
                     // Final longest level
-                    for (let i = 0; i < 40; i++) {
+                    for (let i = 0; i < 50; i++) {
                         platforms.push({
-                            x: i * 100,
-                            y: 450 - Math.sin(i * 0.2) * 100,
-                            width: 70,
+                            x: i * 160,
+                            y: 450 - Math.sin(i * 0.3) * 100,
+                            width: 120,
                             height: 20
                         });
                     }
                     
                     // Complex platform arrangement
-                    for (let i = 0; i < 20; i++) {
+                    for (let i = 0; i < 25; i++) {
                         platforms.push({
-                            x: 150 + i * 200,
+                            x: 200 + i * 250,
                             y: 300 - Math.cos(i * 0.4) * 70,
-                            width: 60,
+                            width: 100,
                             height: 20
                         });
                     }
                     
                     // Even more platforms
-                    for (let i = 0; i < 15; i++) {
+                    for (let i = 0; i < 20; i++) {
                         platforms.push({
-                            x: 100 + i * 300,
+                            x: 150 + i * 350,
                             y: 150 - Math.sin(i * 0.6) * 50,
-                            width: 50,
+                            width: 80,
                             height: 20
                         });
                     }
                     
                     // Coins everywhere
-                    for (let i = 0; i < 50; i++) {
+                    for (let i = 0; i < 60; i++) {
                         coins.push({
-                            x: 30 + i * 80,
+                            x: 50 + i * 120,
                             y: 400 - Math.sin(i * 0.3) * 150,
                             width: 20,
                             height: 20,
@@ -604,48 +636,48 @@
                     }
                     
                     // Enemies everywhere
-                    for (let i = 0; i < 15; i++) {
+                    for (let i = 0; i < 20; i++) {
                         enemies.push({
-                            x: 200 + i * 250,
+                            x: 300 + i * 300,
                             y: 430,
                             width: 30,
                             height: 20,
                             speed: 2 + (i % 3),
                             direction: (i % 2 === 0) ? 1 : -1,
-                            minX: 150 + i * 250,
-                            maxX: 250 + i * 250
+                            minX: 250 + i * 300,
+                            maxX: 350 + i * 300
                         });
                     }
                     
                     // Enemies at different heights
-                    for (let i = 0; i < 10; i++) {
+                    for (let i = 0; i < 15; i++) {
                         enemies.push({
-                            x: 300 + i * 400,
+                            x: 400 + i * 450,
                             y: 280,
                             width: 30,
                             height: 20,
                             speed: 2 + (i % 2),
                             direction: (i % 2 === 0) ? -1 : 1,
-                            minX: 250 + i * 400,
-                            maxX: 350 + i * 400
+                            minX: 350 + i * 450,
+                            maxX: 450 + i * 450
                         });
                     }
                     
-                    for (let i = 0; i < 8; i++) {
+                    for (let i = 0; i < 12; i++) {
                         enemies.push({
-                            x: 500 + i * 500,
+                            x: 600 + i * 600,
                             y: 130,
                             width: 30,
                             height: 20,
                             speed: 3,
                             direction: (i % 2 === 0) ? 1 : -1,
-                            minX: 450 + i * 500,
-                            maxX: 550 + i * 500
+                            minX: 550 + i * 600,
+                            maxX: 650 + i * 600
                         });
                     }
                     
                     // Goal
-                    goal = {x: 4000, y: 350, width: 30, height: 50};
+                    goal = {x: 7500, y: 350, width: 30, height: 50};
                     break;
             }
             
@@ -664,18 +696,18 @@
                             selectedSkin === 2 ? '#FFA500' : '#FFFFFF';
             
             // Body
-            ctx.fillRect(player.x, player.y, player.width, player.height);
+            ctx.fillRect(player.x - camera.x, player.y, player.width, player.height);
             
             // Head
-            ctx.fillRect(player.x + 25, player.y - 15, 20, 20);
+            ctx.fillRect(player.x - camera.x + 25, player.y - 15, 20, 20);
             
             // Beak
             ctx.fillStyle = '#FF6600';
-            ctx.fillRect(player.x + 40, player.y - 5, 15, 8);
+            ctx.fillRect(player.x - camera.x + 40, player.y - 5, 15, 8);
             
             // Eye
             ctx.fillStyle = '#000';
-            ctx.fillRect(player.x + 38, player.y - 12, 4, 4);
+            ctx.fillRect(player.x - camera.x + 38, player.y - 12, 4, 4);
             
             // Legs (animated)
             ctx.fillStyle = '#FF6600';
@@ -684,22 +716,22 @@
                 if (Math.abs(player.velX) > 0.5) {
                     if (frame === 0 || frame === 2) {
                         // Left leg forward
-                        ctx.fillRect(player.x + 10, player.y + player.height, 5, 8);
-                        ctx.fillRect(player.x + 25, player.y + player.height + 5, 5, 3);
+                        ctx.fillRect(player.x - camera.x + 10, player.y + player.height, 5, 8);
+                        ctx.fillRect(player.x - camera.x + 25, player.y + player.height + 5, 5, 3);
                     } else {
                         // Right leg forward
-                        ctx.fillRect(player.x + 10, player.y + player.height + 5, 5, 3);
-                        ctx.fillRect(player.x + 25, player.y + player.height, 5, 8);
+                        ctx.fillRect(player.x - camera.x + 10, player.y + player.height + 5, 5, 3);
+                        ctx.fillRect(player.x - camera.x + 25, player.y + player.height, 5, 8);
                     }
                 } else {
                     // Standing still
-                    ctx.fillRect(player.x + 10, player.y + player.height, 5, 5);
-                    ctx.fillRect(player.x + 25, player.y + player.height, 5, 5);
+                    ctx.fillRect(player.x - camera.x + 10, player.y + player.height, 5, 5);
+                    ctx.fillRect(player.x - camera.x + 25, player.y + player.height, 5, 5);
                 }
             } else {
                 // Jumping - legs tucked
-                ctx.fillRect(player.x + 10, player.y + player.height, 5, 3);
-                ctx.fillRect(player.x + 25, player.y + player.height, 5, 3);
+                ctx.fillRect(player.x - camera.x + 10, player.y + player.height, 5, 3);
+                ctx.fillRect(player.x - camera.x + 25, player.y + player.height, 5, 3);
             }
             
             // Wing (animated)
@@ -709,13 +741,13 @@
             if (player.grounded && Math.abs(player.velX) > 0.5) {
                 // Flapping wing when running
                 if (frame < 2) {
-                    ctx.fillRect(player.x + 5, player.y + 10, 15, 15);
+                    ctx.fillRect(player.x - camera.x + 5, player.y + 10, 15, 15);
                 } else {
-                    ctx.fillRect(player.x + 5, player.y + 15, 15, 10);
+                    ctx.fillRect(player.x - camera.x + 5, player.y + 15, 15, 10);
                 }
             } else {
                 // Still wing when idle or jumping
-                ctx.fillRect(player.x + 5, player.y + 10, 15, 15);
+                ctx.fillRect(player.x - camera.x + 5, player.y + 10, 15, 15);
             }
         }
         
@@ -724,9 +756,9 @@
             if (pipeAnimation.active) {
                 ctx.fillStyle = '#795548';
                 // Pipe
-                ctx.fillRect(player.x - 30, player.y, 30, pipeAnimation.height);
+                ctx.fillRect(player.x - camera.x - 30, player.y, 30, pipeAnimation.height);
                 // Pipe cap
-                ctx.fillRect(player.x - 35, player.y - 10, 40, 10);
+                ctx.fillRect(player.x - camera.x - 35, player.y - 10, 40, 10);
             }
         }
         
@@ -734,33 +766,36 @@
         function drawPlatforms() {
             ctx.fillStyle = '#4CAF50';
             platforms.forEach(platform => {
-                ctx.fillRect(platform.x, platform.y, platform.width, platform.height);
-                
-                // Platform top (grass)
-                ctx.fillStyle = '#388E3C';
-                ctx.fillRect(platform.x, platform.y, platform.width, 5);
-                ctx.fillStyle = '#4CAF50';
+                // Only draw platforms that are on screen
+                if (platform.x + platform.width > camera.x && platform.x < camera.x + canvas.width) {
+                    ctx.fillRect(platform.x - camera.x, platform.y, platform.width, platform.height);
+                    
+                    // Platform top (grass)
+                    ctx.fillStyle = '#388E3C';
+                    ctx.fillRect(platform.x - camera.x, platform.y, platform.width, 5);
+                    ctx.fillStyle = '#4CAF50';
+                }
             });
         }
         
         // Draw coins
         function drawCoins() {
             coins.forEach(coin => {
-                if (!coin.collected) {
+                if (!coin.collected && coin.x + coin.width > camera.x && coin.x < camera.x + canvas.width) {
                     ctx.fillStyle = '#FFD700';
                     ctx.beginPath();
-                    ctx.arc(coin.x + coin.width/2, coin.y + coin.height/2, coin.width/2, 0, Math.PI * 2);
+                    ctx.arc(coin.x - camera.x + coin.width/2, coin.y + coin.height/2, coin.width/2, 0, Math.PI * 2);
                     ctx.fill();
                     
                     ctx.fillStyle = '#FFA500';
                     ctx.beginPath();
-                    ctx.arc(coin.x + coin.width/2, coin.y + coin.height/2, coin.width/4, 0, Math.PI * 2);
+                    ctx.arc(coin.x - camera.x + coin.width/2, coin.y + coin.height/2, coin.width/4, 0, Math.PI * 2);
                     ctx.fill();
                     
                     // Shine effect
                     ctx.fillStyle = '#FFFFFF';
                     ctx.beginPath();
-                    ctx.arc(coin.x + coin.width/3, coin.y + coin.height/3, coin.width/6, 0, Math.PI * 2);
+                    ctx.arc(coin.x - camera.x + coin.width/3, coin.y + coin.height/3, coin.width/6, 0, Math.PI * 2);
                     ctx.fill();
                 }
             });
@@ -769,57 +804,66 @@
         // Draw enemies
         function drawEnemies() {
             enemies.forEach(enemy => {
-                // Body
-                ctx.fillStyle = '#F44336';
-                ctx.fillRect(enemy.x, enemy.y, enemy.width, enemy.height);
-                
-                // Eyes
-                ctx.fillStyle = '#000';
-                ctx.fillRect(enemy.x + 5, enemy.y + 5, 5, 5);
-                ctx.fillRect(enemy.x + 20, enemy.y + 5, 5, 5);
-                
-                // Angry eyebrows
-                ctx.fillRect(enemy.x + 3, enemy.y + 3, 8, 2);
-                ctx.fillRect(enemy.x + 18, enemy.y + 3, 8, 2);
-                
-                // Feet (animated)
-                let frame = Math.floor(frameCount / 10) % 2;
-                ctx.fillStyle = '#7F0000';
-                if (frame === 0) {
-                    ctx.fillRect(enemy.x + 5, enemy.y + enemy.height, 5, 3);
-                    ctx.fillRect(enemy.x + 20, enemy.y + enemy.height + 3, 5, 3);
-                } else {
-                    ctx.fillRect(enemy.x + 5, enemy.y + enemy.height + 3, 5, 3);
-                    ctx.fillRect(enemy.x + 20, enemy.y + enemy.height, 5, 3);
+                // Only draw enemies that are on screen
+                if (enemy.x + enemy.width > camera.x && enemy.x < camera.x + canvas.width) {
+                    // Body
+                    ctx.fillStyle = '#F44336';
+                    ctx.fillRect(enemy.x - camera.x, enemy.y, enemy.width, enemy.height);
+                    
+                    // Eyes
+                    ctx.fillStyle = '#000';
+                    ctx.fillRect(enemy.x - camera.x + 5, enemy.y + 5, 5, 5);
+                    ctx.fillRect(enemy.x - camera.x + 20, enemy.y + 5, 5, 5);
+                    
+                    // Angry eyebrows
+                    ctx.fillRect(enemy.x - camera.x + 3, enemy.y + 3, 8, 2);
+                    ctx.fillRect(enemy.x - camera.x + 18, enemy.y + 3, 8, 2);
+                    
+                    // Feet (animated)
+                    let frame = Math.floor(frameCount / 10) % 2;
+                    ctx.fillStyle = '#7F0000';
+                    if (frame === 0) {
+                        ctx.fillRect(enemy.x - camera.x + 5, enemy.y + enemy.height, 5, 3);
+                        ctx.fillRect(enemy.x - camera.x + 20, enemy.y + enemy.height + 3, 5, 3);
+                    } else {
+                        ctx.fillRect(enemy.x - camera.x + 5, enemy.y + enemy.height + 3, 5, 3);
+                        ctx.fillRect(enemy.x - camera.x + 20, enemy.y + enemy.height, 5, 3);
+                    }
                 }
             });
         }
         
         // Draw goal
         function drawGoal() {
-            // Post
-            ctx.fillStyle = '#795548';
-            ctx.fillRect(goal.x, goal.y, 5, goal.height);
-            
-            // Flag pole
-            ctx.fillRect(goal.x + goal.width - 5, goal.y, 5, goal.height);
-            
-            // Flag (waving animation)
-            let wave = Math.sin(frameCount / 10) * 5;
-            ctx.fillStyle = '#FFEB3B';
-            ctx.beginPath();
-            ctx.moveTo(goal.x + goal.width, goal.y + 10);
-            ctx.lineTo(goal.x + goal.width + 20 + wave, goal.y + 20);
-            ctx.lineTo(goal.x + goal.width, goal.y + 30);
-            ctx.fill();
+            // Only draw if on screen
+            if (goal.x + goal.width > camera.x && goal.x < camera.x + canvas.width) {
+                // Post
+                ctx.fillStyle = '#795548';
+                ctx.fillRect(goal.x - camera.x, goal.y, 5, goal.height);
+                
+                // Flag pole
+                ctx.fillRect(goal.x - camera.x + goal.width - 5, goal.y, 5, goal.height);
+                
+                // Flag (waving animation)
+                let wave = Math.sin(frameCount / 10) * 5;
+                ctx.fillStyle = '#FFEB3B';
+                ctx.beginPath();
+                ctx.moveTo(goal.x - camera.x + goal.width, goal.y + 10);
+                ctx.lineTo(goal.x - camera.x + goal.width + 20 + wave, goal.y + 20);
+                ctx.lineTo(goal.x - camera.x + goal.width, goal.y + 30);
+                ctx.fill();
+            }
         }
         
         // Draw particles
         function drawParticles() {
             for (let i = 0; i < particles.length; i++) {
                 const p = particles[i];
-                ctx.fillStyle = p.color;
-                ctx.fillRect(p.x, p.y, p.size, p.size);
+                // Only draw particles that are on screen
+                if (p.x > camera.x && p.x < camera.x + canvas.width) {
+                    ctx.fillStyle = p.color;
+                    ctx.fillRect(p.x - camera.x, p.y, p.size, p.size);
+                }
             }
         }
         
@@ -835,15 +879,18 @@
             // Stars
             ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
             backgrounds.forEach(star => {
-                ctx.beginPath();
-                ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
-                ctx.fill();
+                // Only draw stars that are on screen
+                if (star.x > camera.x && star.x < camera.x + canvas.width) {
+                    ctx.beginPath();
+                    ctx.arc(star.x - camera.x, star.y, star.size, 0, Math.PI * 2);
+                    ctx.fill();
+                }
             });
             
             // Sun
             ctx.fillStyle = '#FFEB3B';
             ctx.beginPath();
-            ctx.arc(700, 80, 40, 0, Math.PI * 2);
+            ctx.arc(700 - camera.x * 0.1, 80, 40, 0, Math.PI * 2);
             ctx.fill();
         }
         
@@ -867,8 +914,8 @@
         function updateBackground() {
             backgrounds.forEach(star => {
                 star.x -= star.speed;
-                if (star.x < -10) {
-                    star.x = canvas.width + 10;
+                if (star.x < camera.x - 10) {
+                    star.x = camera.x + canvas.width + 10;
                     star.y = Math.random() * canvas.height;
                 }
             });
@@ -916,6 +963,36 @@
                     player.grounded = true;
                     return;
                 }
+                
+                // Check if player is below platform and jumping up
+                if (player.x + player.width > p.x &&
+                    player.x < p.x + p.width &&
+                    player.y >= p.y + p.height &&
+                    player.y + player.velY <= p.y + p.height) {
+                    
+                    player.y = p.y + p.height;
+                    player.velY = 0;
+                    return;
+                }
+                
+                // Check side collisions
+                if (player.y + player.height > p.y &&
+                    player.y < p.y + p.height) {
+                    
+                    // Left side collision
+                    if (player.x + player.width <= p.x &&
+                        player.x + player.width + player.velX >= p.x) {
+                        player.x = p.x - player.width;
+                        player.velX = 0;
+                    }
+                    
+                    // Right side collision
+                    if (player.x >= p.x + p.width &&
+                        player.x + player.velX <= p.x + p.width) {
+                        player.x = p.x + p.width;
+                        player.velX = 0;
+                    }
+                }
             }
             
             // Ground collision
@@ -925,6 +1002,16 @@
                 player.jumping = false;
                 player.grounded = true;
             }
+        }
+        
+        // Update camera to follow player
+        function updateCamera() {
+            // Camera follows player with some smoothing
+            const targetX = player.x - canvas.width / 3;
+            camera.x += (targetX - camera.x) * 0.1;
+            
+            // Keep camera within bounds
+            if (camera.x < 0) camera.x = 0;
         }
         
         // Update game state
@@ -949,26 +1036,24 @@
             // Apply friction
             player.velX *= friction;
             
-            // Handle key presses and touch controls
-            if (keys['ArrowLeft'] || keys['a'] || touchLeft) {
-                player.direction = -1;
-                if (player.velX > -player.speed) {
-                    player.velX--;
-                }
-            }
-            
-            if (keys['ArrowRight'] || keys['d'] || touchRight) {
-                player.direction = 1;
-                if (player.velX < player.speed) {
-                    player.velX++;
-                }
-            }
-            
-            if ((keys['ArrowUp'] || keys['w'] || keys[' '] || touchJump) && !player.jumping && player.grounded) {
+            // Handle touch controls
+            if (touchLeft && !player.jumping && player.grounded) {
                 player.jumping = true;
                 player.grounded = false;
                 player.velY = jumpStrength;
                 createParticles(player.x + player.width/2, player.y + player.height, '#87CEEB', 10);
+            }
+            
+            if (touchRight) {
+                player.direction = 1;
+                if (player.velX < player.speed) {
+                    player.velX++;
+                }
+            } else if (touchLeft) {
+                player.direction = -1;
+                if (player.velX > -player.speed) {
+                    player.velX--;
+                }
             }
             
             // Update position
@@ -977,10 +1062,12 @@
             
             // Boundary checks
             if (player.x < 0) player.x = 0;
-            if (player.x + player.width > canvas.width) player.x = canvas.width - player.width;
             
             // Platform collision
             checkPlatformCollision();
+            
+            // Update camera
+            updateCamera();
             
             // Coin collection
             for (let i = 0; i < coins.length; i++) {
@@ -1004,12 +1091,13 @@
                 
                 if (checkCollision(player, enemy)) {
                     // Reset player position and lose a life
-                    player.x = 50;
+                    player.x = 100;
                     player.y = 300;
                     pipeAnimation.active = true;
                     pipeAnimation.height = 0;
                     player.velX = 0;
                     player.velY = 0;
+                    camera.x = 0;
                     lives--;
                     livesDisplay.textContent = lives;
                     createParticles(player.x + player.width/2, player.y + player.height/2, '#F44336', 20);
@@ -1093,6 +1181,7 @@
         // Event listeners
         startBtn.addEventListener('click', () => {
             startScreen.style.display = 'none';
+            mobileControls.style.display = 'flex';
             initGame();
             showLevelIndicator();
         });
@@ -1130,91 +1219,57 @@
             });
         });
         
-        // Keyboard input
-        window.addEventListener('keydown', (e) => {
-            keys[e.key] = true;
-        });
-        
-        window.addEventListener('keyup', (e) => {
-            keys[e.key] = false;
-        });
-        
-        // Prevent spacebar from scrolling page
-        window.addEventListener('keydown', (e) => {
-            if (e.key === ' ' && e.target === document.body) {
-                e.preventDefault();
+        // Touch controls
+        canvas.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            const touch = e.touches[0];
+            lastTouchX = touch.clientX;
+            
+            // Left side of screen for jump/move left
+            if (touch.clientX < canvas.width / 2) {
+                touchLeft = true;
+            } 
+            // Right side of screen for move right
+            else {
+                touchRight = true;
             }
         });
         
-        // Mobile touch controls
-        leftBtn.addEventListener('touchstart', (e) => {
-            e.preventDefault();
-            touchLeft = true;
-        });
-        
-        leftBtn.addEventListener('touchend', (e) => {
+        canvas.addEventListener('touchend', (e) => {
             e.preventDefault();
             touchLeft = false;
-        });
-        
-        rightBtn.addEventListener('touchstart', (e) => {
-            e.preventDefault();
-            touchRight = true;
-        });
-        
-        rightBtn.addEventListener('touchend', (e) => {
-            e.preventDefault();
             touchRight = false;
         });
         
-        jumpBtn.addEventListener('touchstart', (e) => {
+        canvas.addEventListener('touchmove', (e) => {
             e.preventDefault();
-            touchJump = true;
-        });
-        
-        jumpBtn.addEventListener('touchend', (e) => {
-            e.preventDefault();
-            touchJump = false;
         });
         
         // Mouse controls for desktop testing
-        leftBtn.addEventListener('mousedown', () => {
-            touchLeft = true;
+        canvas.addEventListener('mousedown', (e) => {
+            lastTouchX = e.clientX;
+            
+            // Left side of screen for jump/move left
+            if (e.clientX < canvas.width / 2) {
+                touchLeft = true;
+            } 
+            // Right side of screen for move right
+            else {
+                touchRight = true;
+            }
         });
         
-        leftBtn.addEventListener('mouseup', () => {
+        canvas.addEventListener('mouseup', () => {
             touchLeft = false;
-        });
-        
-        leftBtn.addEventListener('mouseleave', () => {
-            touchLeft = false;
-        });
-        
-        rightBtn.addEventListener('mousedown', () => {
-            touchRight = true;
-        });
-        
-        rightBtn.addEventListener('mouseup', () => {
             touchRight = false;
         });
         
-        rightBtn.addEventListener('mouseleave', () => {
+        canvas.addEventListener('mouseleave', () => {
+            touchLeft = false;
             touchRight = false;
         });
         
-        jumpBtn.addEventListener('mousedown', () => {
-            touchJump = true;
-        });
-        
-        jumpBtn.addEventListener('mouseup', () => {
-            touchJump = false;
-        });
-        
-        jumpBtn.addEventListener('mouseleave', () => {
-            touchJump = false;
-        });
-        
-        // Prevent context menu on mobile
+        // Prevent context menu
         document.addEventListener('contextmenu', (e) => {
             e.preventDefault();
         });
